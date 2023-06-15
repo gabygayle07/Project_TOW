@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fa/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Destination Choice</title>
+    <link rel="icon" href="./images/logo-black.png">
+    <script src="./js/jquery-3.2.1.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body class="page1">
+    <div class="main">
+        <div class="menu darkblue destinationmain">
+            <nav class="navbar navbar-expand mt-3">
+                <a class="navbar-brand ml-10" href="./index.html">
+                    <img src="./images/logo-white.png" alt="Logo" height="30">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav text-right">
+                        <li class="nav-item active">
+                            <a class="nav-link px-5 fw text-white" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5 fw text-white" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5 fw text-white" href="./travels.html">Travels</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5 fw text-white" href="./culinary.html">Culinary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5 fw text-white" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="content mt-0">
+            <div class="subscribe searchdest p-3 pb-3 text-center">
+                <div class="subscribeinput">
+                    <div class="inp">
+                        <input type="text" class="p-3 pl-5" placeholder="search destinations">
+                        <a href="javascript:void(0);" class="px-3 mr-2 text-white"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row deptotal m-0">
+                <div class="col-sm-6">
+                    <div class="depart p-3 mt-3">
+                        <h5 class="gray">Depart in</h5>
+                        <select class="form-control" id="exampleSelect">
+                            <option>3 month</option>
+                            <option>6 month</option>
+                            <option>12 month</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="totalbud p-3 mt-3">
+                        <h5 class="gray">Total budget</h5>
+                        <h5 class="text-dark">IDR 30,000,000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mt-4 slidesdest mx-10">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a class="card border-0" href="./details.html">
+                            <div class="card-body" style="background:url(./images/jakarta.png) no-repeat;">
+                                <h3>Jakarta</h3>
+                            </div>
+                            <div class="card-footer footerrow border-0 p-3">
+                                <h3 class="gray">Start from</h3>
+                                <h6>IDR 1,528,793/person</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="card border-0" href="./details.html">
+                            <div class="card-body" style="background:url(./images/padang.png) no-repeat;">
+                                <h3>Padang</h3>
+                            </div>
+                            <div class="card-footer footerrow border-0 p-3">
+                                <h3 class="gray">Start from</h3>
+                                <h6>IDR 1,594,744/person</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="card border-0" href="./details.html">
+                            <div class="card-body" style="background:url(./images/bandung.png) no-repeat;">
+                                <h3>Bandung</h3>
+                            </div>
+                            <div class="card-footer footerrow border-0 p-3">
+                                <h3 class="gray">Start from</h3>
+                                <h6>IDR 1,559,608/person</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script language="javascript">
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: 2.5,
+        spaceBetween: 30,
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./fa/css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>NO. 3 - Budgetting Planner</title>
+  <link rel="icon" href="./images/logo.png">
+</head>
+<body class="planeryes">
+	<div class="main">
+		<div class="menu darkblue">
+			<nav class="navbar navbar-expand mt-3">
+				<a class="navbar-brand ml-10" href="./index.html">
+				  <img src="./images/logo-white.png" alt="Logo" height="30">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+				  <ul class="navbar-nav text-right">
+					<li class="nav-item active">
+					  <a class="nav-link px-5 fw text-white" href="./index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link px-5 fw text-white" href="#">About</a>
+					</li>
+					
+					<li class="nav-item">
+					  <a class="nav-link px-5 fw text-white" href="./travels.html">Travels</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link px-5 fw text-white" href="./culinary.html">Culinary</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link px-5 fw text-white" href="#">Contact</a>
+					</li>
+				  </ul>
+				</div>
+			</nav>
+		</div>
+		<div class="content mt-3">
+			<div class="card">
+			  <div class="card-body mt-0 pt-0 text-center">
+				  <div class="orsign text-center">
+					  <div class="text-center m-3 text-danger judulplan">
+						<h3 class="bp py-1">Budget Planner</h3>
+					  </div>
+					  <h1 class="text-center m-2 mb-3">How much do you put aside on average for the following?</h1>
+						<div class="progbar1 text-center m-2 mb-3">
+						  <h4 class="gray">Expenses</h4>
+						  <div class="harga d-flex align-items-center justify-content-between">
+							<div class="minus"><i class="far fa-minus-square"></i></div>
+							<div class="hargaplaner">
+							  <h2 id="hargaValue">Rp 2.600.000</h2>
+							</div>
+							<div class="plus"><i class="far fa-plus-square"></i></div>
+						  </div>
+						  <div class="hargasliders">
+							<input type="range" min="0" max="10000000" step="100000" value="5000000" id="hargaSlider">
+						  </div>
+						</div>
+						<div class="progbar2 text-center m-2 mb-3">
+						  <h4 class="gray">Savings</h4>
+						  <div class="harga d-flex align-items-center justify-content-between">
+							<div class="minus"><i class="far fa-minus-square"></i></div>
+							<div class="hargaplaner">
+							  <h2 id="hargaValue">Rp 2.400.000</h2>
+							</div>
+							<div class="plus"><i class="far fa-plus-square"></i></div>
+						  </div>
+						  <div class="hargasliders">
+							<input type="range" min="0" max="10000000" step="100000" value="4000000" id="hargaSlider">
+						  </div>
+						</div>
+					  <p class="mt-5">
+						<a href="./no4.html" class="text-center text-dark btn-warning text-white fw m-1 p-3 px-5 rounded-pill see">Calculate my budget!</a>
+					  </p>
+				  </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+  <script src="./js/jquery-3.2.1.slim.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script language="javascript">
+	var slider = document.getElementById("hargaSlider");
+	var hargaValue = document.getElementById("hargaValue");
+	var minusButton = document.querySelector(".minus");
+	var plusButton = document.querySelector(".plus");
+
+	minusButton.addEventListener("click", function() {
+	  var currentValue = parseInt(slider.value);
+	  var step = parseInt(slider.step);
+	  var newValue = currentValue - step;
+	  
+	  if (newValue >= parseInt(slider.min)) {
+		slider.value = newValue;
+		hargaValue.innerHTML = "Rp. " + numberWithCommas(newValue);
+	  }
+	});
+
+	plusButton.addEventListener("click", function() {
+	  var currentValue = parseInt(slider.value);
+	  var step = parseInt(slider.step);
+	  var newValue = currentValue + step;
+	  
+	  if (newValue <= parseInt(slider.max)) {
+		slider.value = newValue;
+		hargaValue.innerHTML = "Rp. " + numberWithCommas(newValue);
+	  }
+	});
+
+	slider.addEventListener("input", function() {
+	  var currentValue = parseInt(slider.value);
+	  hargaValue.innerHTML = "Rp. " + numberWithCommas(currentValue);
+	});
+
+	function numberWithCommas(x) {
+	  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+	}
+  </script>
+</body>
+</html>
